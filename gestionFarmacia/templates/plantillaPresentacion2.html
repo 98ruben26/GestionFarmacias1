@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Farmacia | Panel de Control</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f7f6;
+        }
+        .navbar {
+            background-color: #00a884; /* Verde farmacia */
+        }
+        .hero-section {
+            background: linear-gradient(135deg, #00a884 0%, #00796b 100%);
+            color: white;
+            padding: 60px 0;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+        }
+        .card-custom {
+            border: none;
+            border-radius: 15px;
+            transition: transform 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .card-custom:hover {
+            transform: translateY(-10px);
+        }
+        .icon-box {
+            font-size: 2rem;
+            color: #00a884;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">➕ FarmaGest v1.0</a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link active" href="/admin">Panel Admin</a>
+                <a class="nav-link" href="/api/productos">Ver API</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Sistema Integrado de Gestión</h1>
+            <p class="lead">Control de Inventario, Sucursales y Stock Crítico para Cadenas de Farmacias</p>
+            <span class="badge bg-light text-dark p-2">PostgreSQL + Django + DRF</span>
+        </div>
+    </header>
+
+    <main class="container my-5">
+        <div class="row g-4 text-center">
+            
+            <div class="col-md-3">
+                <div class="card card-custom p-4">
+                    <div class="icon-box">📦</div>
+                    <h5>Productos</h5>
+                    <p class="small text-muted">Gestión de catálogo y precios validados.</p>
+                    <a href="/api/productos/" class="btn btn-outline-success btn-sm">Explorar</a>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card card-custom p-4">
+                    <div class="icon-box">🏢</div>
+                    <h5>Sucursales</h5>
+                    <p class="small text-muted">Administración de sedes a nivel nacional.</p>
+                    <a href="/api/sucursales/" class="btn btn-outline-success btn-sm">Ver Sedes</a>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card card-custom p-4">
+                    <div class="icon-box">📉</div>
+                    <h5>Stock Crítico</h5>
+                    <p class="small text-muted">Alertas automáticas de reposición.</p>
+                    <a href="/api/stock-critico/" class="btn btn-danger btn-sm">Revisar Alertas</a>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card card-custom p-4">
+                    <div class="icon-box">🔐</div>
+                    <h5>Seguridad</h5>
+                    <p class="small text-muted">Acceso restringido y variables de entorno.</p>
+                    <button class="btn btn-dark btn-sm" disabled>Encriptado</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="mt-5 p-5 bg-white rounded-4 shadow-sm">
+            <h3 class="border-bottom pb-3">Resumen de la Aplicación</h3>
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <ul>
+                        <li><strong>Backend:</strong> Django 5.0</li>
+                        <li><strong>Base de Datos:</strong> PostgreSQL</li>
+                        <li><strong>Modelos:</strong> 4 Tablas relacionadas</li>
+                        <li><strong>API:</strong> Django Rest Framework</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <p class="text-muted">Este sistema cumple con los requerimientos de validaciones personalizadas y vistas genéricas para una gestión eficiente de insumos médicos.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-center py-4 text-muted">
+        <small>&copy; 2026 Gestión de Farmacia - Proyecto Académico</small>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

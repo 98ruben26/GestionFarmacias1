@@ -1,0 +1,63 @@
+{% extends "planillaBase.html" %}
+
+{% block title %}FarmaGest Pro | Acceso al Sistema{% endblock %}
+
+{% block content %}
+<section class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+            <div class="card shadow-lg border-0" style="border-radius: 20px;">
+                <div class="card-header bg-white text-center border-0 pt-4">
+                    <div style="font-size: 3rem;">🔐</div>
+                    <h3 class="fw-bold" style="color: #00a884;">Acceso de Personal</h3>
+                    <p class="text-muted small">Ingrese sus credenciales para gestionar productos</p>
+                </div>
+                
+                <div class="card-body p-4">
+                    <form method="POST" action="">
+                        {% csrf_token %}
+                        
+                        <div class="mb-3">
+                            <label for="username" class="form-label fw-semibold">Usuario o Correo</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light border-end-0">👤</span>
+                                <input type="text" name="username" class="form-control border-start-0" id="username" placeholder="admin_farmacia" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="password" class="form-label fw-semibold">Contraseña</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light border-end-0">🔑</span>
+                                <input type="password" name="password" class="form-control border-start-0" id="password" placeholder="••••••••" required>
+                            </div>
+                            <div class="text-end mt-1">
+                                <a href="#" class="text-decoration-none small text-secondary italic">¿Olvidó su contraseña?</a>
+                            </div>
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-success btn-lg shadow-sm" style="background-color: #00a884; border: none; border-radius: 10px;">
+                            <a href="/sucursales/" >
+                                Entrar
+                            </a>   
+                            
+                            </button>
+                            <a href="/accesoUsuario/" class="btn btn-outline-secondary border-0 mt-2">
+                                ← Volver a opciones
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <p class="small text-muted">
+                    Usted está accediendo a un sistema restringido.<br>
+                    Toda actividad es monitoreada por <strong>FarmaGest Pro</strong>.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

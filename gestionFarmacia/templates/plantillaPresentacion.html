@@ -1,0 +1,31 @@
+{% extends "planillaBase.html" %}
+ 
+    {% block title %}
+        FarmaGest Pro | Presentación
+    {% endblock %}
+ 
+    {% block content %} 
+    <section class="seccion-acceso">
+        <div class="container">
+            <h2 class="titulo-bienvenida">¡Bienvenido a la Plataforma!</h2>
+            <p class="subtitulo-acceso">Por favor, seleccione su tipo de acceso para continuar:</p>
+            
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="d-grid d-sm-flex gap-4 justify-content-sm-center">
+                        
+                        <a href="/accesoUsuario/" class="btn btn-acceso btn-ingreso-usuario btn-lg">
+                            <span class="icono-btn">👤</span> Ingreso Usuario
+                        </a>   
+                                                
+                        <a href="/sucursales/" class="btn btn-acceso btn-invitado btn-lg">
+                            <span class="icono-btn">👁️</span> Acceso Invitado
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endblock %}
+

@@ -1,0 +1,37 @@
+{% extends "planillaBase.html" %}
+
+{% block title %} FarmaGest Pro | Catálogo General {% endblock %}
+
+{% block content %}
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h1 class="fw-bold">Catálogo Completo de Productos</h1>
+            <p class="lead text-muted">Explora todos los artículos disponibles en nuestra red de farmacias.</p>
+        </div>
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+            {% for producto in productos %}
+            <div class="col">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold text-dark">{{ producto.nombre }}</h5>
+                        <p class="card-text text-muted small">
+                            {{ producto.descripcion|truncatechars:80 }}
+                        </p>
+                        <h4 class="text-primary fw-bold">${{ producto.precio }}</h4>
+                    </div>
+                    <div class="card-footer bg-transparent border-0 pb-3">
+                        <a href="#" class="btn btn-outline-primary w-100">Ver Detalles</a>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <div class="col-12 text-center">
+                <p>No hay productos registrados en el sistema actualmente.</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

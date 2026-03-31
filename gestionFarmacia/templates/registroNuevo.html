@@ -1,0 +1,41 @@
+{% extends "planillaBase.html" %}
+
+{% block title %}FarmaGest Pro | Registro de Usuario{% endblock %}
+
+{% block content %}
+<section class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-lg border-0" style="border-radius: 15px;">
+                <div class="card-body p-5">
+                    <h2 class="text-center mb-4" style="color: #00a884;">Crear Nueva Cuenta</h2>
+                    
+                    <form method="POST">
+                        {% csrf_token %} <div class="mb-3">
+                            <label class="form-label fw-bold">Nombre Completo</label>
+                            <input type="text" name="nombre" class="form-control" placeholder="Ej. Juan Pérez" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Correo Electrónico</label>
+                            <input type="email" name="email" class="form-control" placeholder="usuario@farmacia.com" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Contraseña</label>
+                            <input type="password" name="password" class="form-control" required>
+                        </div>
+
+                        <div class="d-grid gap-2 mt-4">
+                            <button type="submit" class="btn btn-acceso btn-ingreso-usuario">
+                                Finalizar Registro
+                            </button>
+                            <a href="/accesoUsuario/" class="btn btn-link text-muted">Volver atrás</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

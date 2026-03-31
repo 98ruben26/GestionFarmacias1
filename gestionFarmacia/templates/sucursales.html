@@ -1,0 +1,60 @@
+{% extends "planillaBase.html" %}
+
+{% block title %} FarmaGest Pro | Sucursales {% endblock %}
+
+{% block styles %}
+<style>
+    .card-sucursal {
+        transition: transform 0.3s, box-shadow 0.3s;
+        cursor: pointer;
+        text-decoration: none;
+        color: inherit;
+        display: block;
+    }
+    .card-sucursal:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    }
+    .img-sucursal {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        border-radius: 15px 15px 0 0;
+    }
+    .info-sucursal {
+        padding: 15px;
+        background: #fff;
+        border-radius: 0 0 15px 15px;
+        border: 1px solid #eee;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<section class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Nuestras Sucursales</h2>
+            <p class="text-muted">Seleccione la sucursal más cercana para ver el stock disponible.</p>
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-3 row-cols-lg-5 g-4">
+            {% for sucursal in sucursales %}
+            <div class="col">
+                <a href="{% url 'detalle_sucursal' sucursal.id %}" class="card-sucursal h-100">
+                    <img src="{{ sucursal.imagen.url|default:'https://images.unsplash.com/photo-1586015555751-63bb77f4322a' }}" 
+                         alt="{{ sucursal.nombre }}" class="img-sucursal">
+                    <div class="info-sucursal text-center">
+                        <h5 class="fw-bold mb-1">{{ sucursal.nombre }}</h5>
+                        <p class="small text-muted mb-0"><i class="bi bi-geo-alt"></i> {{ sucursal.direccion }}</p>
+                    </div>
+                </a>
+            </div>
+            {% empty %}
+            <p class="text-center w-100">No hay sucursales registradas actualmente.</p>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

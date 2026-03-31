@@ -1,0 +1,30 @@
+{% extends "planillaBase.html" %}
+
+{% block content %}
+<div class="container py-5">
+    <h2 class="fw-bold text-primary">Productos disponibles en: {{ sucursal.nombre }}</h2>
+    <p class="text-muted"><i class="bi bi-geo-alt"></i> {{ sucursal.direccion }}</p>
+    <hr>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for producto in productos %}
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">{{ producto.nombre }}</h5>
+                    <p class="card-text text-success fs-4">${{ producto.precio }}</p>
+                    <p class="small text-muted">{{ producto.descripcion|truncatechars:50 }}</p>
+                </div>
+                <div class="card-footer bg-white border-0">
+                    <button class="btn btn-outline-primary w-100">Agregar al Carrito</button>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="col-12 text-center py-5">
+            <p class="lead">Lo sentimos, esta sucursal aún no tiene productos registrados.</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
