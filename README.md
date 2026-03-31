@@ -31,10 +31,15 @@ Antes de comenzar, asegúrate de tener instalado:
 ## 🔧 Instalación y Configuración
 
 1. **Clonar el repositorio:**
+  
    """bash
+   
    git clone [https://github.com/tu-usuario/FarmaGest-Pro.git]
+   
    cd FarmaGest-Pro
+   
 Crear y activar entorno virtual:
+
    """bash
 
     python -m venv venv
