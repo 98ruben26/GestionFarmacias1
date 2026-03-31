@@ -34,7 +34,7 @@ Antes de comenzar, asegúrate de tener instalado:
   
    """bash
    
-   git clone [https://github.com/tu-usuario/FarmaGest-Pro.git]
+   git clone https://github.com/98ruben26/GestionFarmacias1
    
    cd FarmaGest-Pro
    
