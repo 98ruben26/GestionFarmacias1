@@ -1,4 +1,4 @@
-#diplomado de FULLSTACK
+#diplomado de FULLSTACK.
 Desarrollado por Ruben Ariel Acosta Aguilar
 
 # FarmaGest Pro 💊
@@ -79,16 +79,3 @@ Como parte del enfoque en ciberseguridad industrial, este proyecto implementa:
     Control de acceso granular mediante decoradores de Django.
 
     Estructura de modelos diseñada para prevenir colisiones de datos en entornos distribuidos.
-
-Desarrollado por [Tu Nombre] - Postgraduate Student in Technical Fields & Infrastructure Lead.
-
-
----
-
-### Recomendaciones adicionales:
-
-1.  **Imágenes:** Si tienes capturas de pantalla de la página de sucursales o del admin, crea una carpeta llamada `screenshots/` en tu repo y añádelas al README para que sea más visual.
-2.  **Licencia:** Considera añadir un archivo `LICENSE` (como MIT) si planeas que el código sea abierto.
-3.  **Wiki:** Dado que mencionaste temas de **SCADA y Post-Quantum**, podrías añadir una sección en el futuro sobre cómo protegerías este inventario farmacéutico contra ataques externos.
-
-¿Te gustaría que personalice alguna sección técnica adicional, como la configuración específica de   
